@@ -1,0 +1,34 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.HoverPreview {
+	position: absolute;
+	top: 5rem;
+	left: 0;
+	display: block;
+	width: 25rem;
+	height: 15rem;
+	border-radius: 1rem;
+	@include rowCenter();
+	background-color: var(--bg-foreground);
+	border: 1px solid var(--border-color);
+	animation: fade-in 0.2s;
+	z-index: 3;
+
+	&_img {
+		@include fill_container;
+		object-fit: contain;
+		border-radius: 1rem;
+		z-index: 100;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 100;
+	}
+}

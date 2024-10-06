@@ -1,0 +1,38 @@
+@import "./variables";
+@import "./animations";
+
+@mixin fill_container {
+	width: 100%;
+	height: 100%;
+}
+
+// base flex - display: flex;
+@mixin base_flex {
+	display: -webkit-box;
+	display: flex;
+}
+
+// handles flex rows
+@mixin flex_row($rowType, $colType, $wrapType: nowrap) {
+	@include base_flex;
+	flex-direction: row;
+	justify-content: $rowType;
+	align-items: $colType;
+	flex-wrap: $wrapType;
+}
+
+// handles flex columns
+@mixin flex_col($rowType, $colType, $wrapType: nowrap) {
+	@include base_flex;
+	flex-direction: column;
+	justify-content: $rowType;
+	align-items: $colType;
+	flex-wrap: $wrapType;
+}
+
+@mixin rowCenter($wrap: nowrap) {
+	@include flex_row(center, center, $wrap);
+}
+@mixin colCenter($wrap: nowrap) {
+	@include flex_col(center, center, $wrap);
+}

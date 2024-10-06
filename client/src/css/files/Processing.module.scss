@@ -1,0 +1,41 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.Processing {
+	display: block;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@include fill_container;
+	padding: 2rem 4rem;
+	@include flex_col(center, center);
+	background-color: rgba(13, 17, 21, 0.8);
+	backdrop-filter: blur(15px);
+
+	&_inner {
+		color: var(--accent);
+		font-size: 3rem;
+		@include fill_container;
+		@include flex_col(center, center);
+		gap: 1rem 0;
+	}
+}
+
+.CancelButton {
+	margin-top: 2rem;
+	padding: 1rem 3rem;
+	border-radius: 5rem;
+	font-size: 1.7rem;
+	background-color: var(--accent);
+	border: none;
+	outline: none;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+}

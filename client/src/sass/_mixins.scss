@@ -1,0 +1,31 @@
+@import "./variables";
+@import "./animations";
+@import "./custom";
+
+@mixin actionButton($size: 4rem) {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+	border: 1px solid var(--border-color);
+	@include flex_row(center, center);
+	background-color: transparent;
+
+	&_icon {
+		width: 2.5rem;
+		height: 2.5rem;
+		fill: var(--blueGrey300);
+		// fill: var(--border-color);
+	}
+
+	&:hover {
+		cursor: pointer;
+		border-color: var(--accent);
+	}
+	&:hover &_icon {
+		fill: var(--accent);
+	}
+	&:disabled {
+		opacity: 0.3;
+		cursor: not-allowed;
+	}
+}

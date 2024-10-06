@@ -1,0 +1,27 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.UploadsPage {
+	width: 100%;
+	height: auto;
+	@include flex_col(center, center);
+
+	&_dropzone {
+		width: 120rem;
+		max-width: 100%;
+		min-height: 10rem;
+		height: auto;
+		@include flex_row(center, center);
+		border-radius: 1rem;
+		border: 1px solid var(--border-color);
+		margin-bottom: 1rem;
+	}
+	&_panel {
+		width: 100%;
+		height: auto;
+		min-height: 70rem;
+		@include flex_row(center, flex-start);
+		// margin-bottom: 10rem;
+	}
+}

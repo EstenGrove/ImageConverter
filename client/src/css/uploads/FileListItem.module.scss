@@ -1,0 +1,95 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.FileListItem {
+	width: 100%;
+	height: 8rem;
+	border-radius: 1rem;
+	border: 1px solid var(--border-color);
+	padding: 1rem 2rem 1rem 1rem;
+	@include flex_row(flex-start, center);
+	gap: 0 1rem;
+
+	&_selector {
+		width: max-content;
+		height: 5rem;
+	}
+	&_preview {
+		width: max-content;
+		height: 100%;
+		margin-right: 2rem;
+	}
+	&_name {
+		width: 15rem;
+		min-width: max-content;
+		@include flex_row(flex-start, center);
+		height: 100%;
+		font-size: 1.7rem;
+		font-weight: 700;
+		color: var(--blue500);
+	}
+	&_size {
+		width: max-content;
+		height: 100%;
+		font-size: 1.6rem;
+		font-weight: 500;
+		color: var(--blueGrey600);
+		@include flex_row(flex-start, center);
+		margin-left: auto;
+	}
+}
+
+.SelectItem {
+	width: 4rem;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_icon {
+		width: 3rem;
+		height: 3rem;
+		fill: var(--blueGrey400);
+		fill: var(--accent);
+	}
+}
+
+[data-selected="true"] {
+	border-color: var(--accent);
+	background-color: var(--bg-foreground);
+}
+
+@media only screen and (max-width: 750px) {
+	.FileListItem {
+		padding: 1rem 0.7rem;
+		gap: 0 0.6rem;
+		height: 6.5rem;
+
+		&_name {
+			font-size: 1.4rem;
+		}
+		&_size {
+			width: max-content;
+			font-size: 1.1rem;
+			text-align: right;
+		}
+
+		&_preview {
+			display: none;
+			@include flex_row(center, center);
+			margin-right: 0;
+		}
+	}
+	.SelectItem {
+		width: 2.5rem;
+
+		&_icon {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+}

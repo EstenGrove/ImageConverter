@@ -1,0 +1,171 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.FilesTableListItem {
+	width: 100%;
+	height: 5rem;
+	padding: 1rem 0;
+	border-radius: 1rem;
+	border: 1px solid var(--border-color);
+	@include flex_row(flex-start, center);
+	font-size: 1.4rem;
+
+	&_name {
+		position: relative;
+		width: var(--nameCol);
+		@include flex_row(flex-start, center);
+		height: 5rem;
+		gap: 0 0.3rem;
+		font-size: 1.4rem;
+		font-weight: 600;
+		color: var(--blue500);
+		flex-shrink: 2;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&_type {
+		width: var(--typeCol);
+		height: 100%;
+		padding-left: 1.5rem;
+		@include flex_row(flex-start, center);
+	}
+	&_size {
+		width: var(--sizeCol);
+		height: 100%;
+		@include flex_row(flex-start, center);
+	}
+	&_lastMod {
+		width: 20%;
+		height: 100%;
+		@include flex_row(flex-start, center);
+	}
+	&_actions {
+		position: relative;
+		width: var(--actionCol);
+		height: 100%;
+		@include flex_row(flex-end, center);
+	}
+}
+
+.FileActions {
+	width: 100%;
+	height: 100%;
+	padding: 0 1rem;
+	@include flex_row(flex-end, center);
+
+	&_button {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		&:hover {
+			cursor: pointer;
+		}
+
+		&_icon {
+			width: 2.2rem;
+			height: 2.2rem;
+			fill: var(--blueGrey500);
+		}
+	}
+}
+.FileActionsMenu {
+	width: 15rem;
+	height: 17rem;
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 2rem;
+	border-radius: 1rem;
+	padding: 1.5rem 1rem;
+	padding-bottom: 0.5rem;
+	background-color: var(--bg-foreground);
+	border: 1px solid var(--border-color);
+	z-index: 2;
+
+	&_top {
+		width: 100%;
+		padding: 0.3rem 0;
+		padding-top: 0;
+		font-weight: 600;
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	&_list {
+		list-style: none;
+		@include fill_container;
+		max-height: 100%;
+
+		&_item {
+			@include flex_row(space-between, center);
+			width: 100%;
+			font-size: 1.3rem;
+			margin: 1.5rem 0;
+			&:hover {
+				cursor: pointer;
+			}
+
+			&_icon {
+				width: 1.4rem;
+				height: 1.4rem;
+				fill: var(--blue500);
+			}
+			&_downloadIcon {
+				width: 1.4rem;
+				height: 1.4rem;
+				fill: var(--blue500);
+			}
+			&_deleteIcon {
+				width: 1.4rem;
+				height: 1.4rem;
+				fill: red;
+			}
+		}
+	}
+}
+
+.SelectItem {
+	width: 4rem;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_icon {
+		width: 2.5rem;
+		height: 2.5rem;
+		fill: var(--blueGrey800);
+		// fill: var(--accent);
+	}
+}
+[data-selected="true"] .SelectItem_icon {
+	fill: var(--accent);
+}
+
+@media only screen and (max-width: 700px) {
+	.FilesTableListItem {
+		&_name {
+			width: 70%;
+		}
+		&_type {
+			width: var(--altColMobile);
+			display: none;
+		}
+		&_size {
+			width: var(--altColMobile);
+			min-width: max-content;
+			display: none;
+		}
+		&_actions {
+			width: var(--altColMobile);
+			width: 30%;
+		}
+	}
+}

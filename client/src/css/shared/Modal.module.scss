@@ -1,0 +1,62 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.Modal {
+	position: absolute;
+	display: block;
+	width: 70rem;
+	height: 50rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 1rem;
+	background-color: var(--bg-black30);
+	border: 1px solid var(--border-color);
+	box-shadow: 2px 13px 40px -6px rgba(0, 0, 0, 0.75);
+
+	&_top {
+		width: 100%;
+		height: 4rem;
+		padding: 2rem 2rem;
+		@include flex_row(space-between, center);
+
+		&_title {
+			font-size: 2rem;
+		}
+
+		&_close {
+			width: 1.8rem;
+			height: 1.8rem;
+			fill: red;
+		}
+	}
+	&_inner {
+		width: 100%;
+		height: calc(100% - 4rem);
+		overflow-y: auto;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.Modal {
+		position: absolute;
+		display: block;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, -0%);
+		width: 98vw;
+		height: 70vh;
+		min-height: 70vh;
+		box-shadow: 2px -5px 46px -7px rgba(0, 0, 0, 0.95);
+
+		&_top {
+			padding: 2rem 1rem;
+		}
+		&_inner {
+			width: 100%;
+			height: calc(100% - 4rem);
+			overflow-y: auto;
+		}
+	}
+}

@@ -1,0 +1,154 @@
+:root {
+	font-family: "SUSE", "Roboto", sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--font-primary: "SUSE", "Roboto", sans-serif;
+	--font-secondary: "Open Sans", "Roboto", sans-serif;
+
+	/* Blue Shades */
+	--blue50: rgb(239, 246, 255);
+	--blue100: rgb(219, 234, 254);
+	--blue200: rgb(191, 219, 254);
+	--blue300: rgb(147, 197, 253);
+	--blue400: rgb(96, 165, 250);
+	--blue500: rgb(59, 130, 246);
+	--blue600: rgb(37, 99, 235);
+	--blue700: rgb(29, 78, 216);
+	--blue800: rgb(30, 64, 175);
+	--blue900: rgb(30, 58, 138);
+
+	--red100: rgb(255, 255, 255);
+	--red200: rgb(253, 236, 236);
+	--red300: rgb(252, 218, 218);
+	--red400: rgb(250, 199, 199);
+	--red500: rgb(249, 180, 180);
+	--red600: rgb(247, 162, 162);
+	--red700: rgb(245, 143, 143);
+	--red800: rgb(244, 124, 124);
+	--red900: rgb(242, 105, 105);
+	--red1000: rgb(241, 87, 87);
+	--red1100: rgb(239, 68, 68);
+	--red1200: rgb(215, 61, 61);
+
+	/* BLUE-GREY SHADES */
+	--blueGrey50: rgb(248, 250, 252);
+	--blueGrey100: rgb(241, 245, 249);
+	--blueGrey200: rgb(226, 232, 240);
+	--blueGrey300: rgb(203, 213, 225);
+	--blueGrey400: rgb(148, 163, 184);
+	--blueGrey500: rgb(100, 116, 139);
+	--blueGrey600: rgb(71, 85, 105);
+	--blueGrey700: rgb(51, 65, 85);
+	--blueGrey800: rgb(30, 41, 59);
+	--blueGrey900: rgb(15, 23, 42);
+
+	--greyAlt100: rgb(255, 255, 255);
+	--greyAlt200: rgb(253, 253, 253);
+	--greyAlt300: rgb(251, 251, 252);
+	--greyAlt400: rgb(249, 249, 250);
+	--greyAlt500: rgb(247, 247, 249);
+	--greyAlt600: rgb(245, 246, 247);
+	--greyAlt700: rgb(242, 244, 245);
+	--greyAlt800: rgb(240, 242, 244);
+	--greyAlt900: rgb(238, 240, 242);
+	--greyAlt1000: rgb(236, 238, 241);
+	--greyAlt1100: rgb(234, 236, 239);
+	--greyAlt1200: rgb(211, 212, 215);
+	--greyAlt1300: rgb(187, 189, 191);
+	--greyAlt1400: rgb(164, 165, 167);
+	--greyAlt1500: rgb(140, 142, 143);
+	--greyAlt1600: rgb(117, 118, 120);
+	--greyAlt1700: rgb(94, 94, 96);
+	--greyAlt1800: rgb(70, 71, 72);
+	--greyAlt1900: rgb(47, 47, 48);
+	--greyAlt2000: rgb(23, 24, 24);
+	--greyAlt2100: rgb(0, 0, 0);
+
+	/* GREY BG SHADES/TINTS */
+	--bg-grey10: #d3d4d7;
+	--bg-grey20: #bbbdbf;
+	--bg-grey30: #a4a5a7;
+	--bg-grey40: #8c8e8f;
+	--bg-grey50: #757678;
+	/* BLACK/BLUE SHADES/TINTS */
+	--bg-black10: #0c0f13;
+	--bg-black20: #0a0e11;
+	--bg-black30: #090c0f;
+	--bg-black40: #080a0d;
+	--bg-black50: #050708;
+	--bg-black60: #040506;
+	--bg-black70: #030304;
+	--bg-black80: #000000;
+
+	/* Theme/Color Variables */
+	/* --body-light: #eaecef; */
+	--body-light: var(--bg-grey10);
+	--body-dark: #0d1115;
+	--body: var(--body-dark);
+	--bg-foreground-light: #eaecef;
+	--bg-foreground-dark: #0c0f13;
+	--accent-purple: rgb(124, 58, 237);
+	--accent-green: rgb(0, 226, 189);
+	--accent: #ff0066;
+	--text-main: var(--blueGrey200);
+	--text-secondary: rgb(100, 116, 139);
+	--border-color: grey;
+
+	/* Shadows */
+	--focus-shadow: 2px 2px 1px 1px rgba(255, 0, 102, 1);
+	--hover-shadow: 0px 1px 15px -3px rgba(255, 0, 102, 1);
+
+	/* Component Variables */
+	--input-bg: #eaecef;
+
+	/* TABLE COLUMNS */
+	--nameCol: 55%;
+	--typeCol: 15%;
+	--sizeCol: 15%;
+	--actionCol: 15%;
+
+	--mainColMobile: 55%;
+	--altColMobile: 5rem;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-primary);
+	background-color: var(--body);
+}
+
+:root[data-theme="light"] {
+	--body: var(--body-light);
+	--bg-foreground: var(--bg-foreground-light);
+	--text-main: var(--blueGrey700);
+	--text-alt: var(--text-secondary);
+	--border-color: var(--blueGrey300);
+	--input-bg: #fff;
+	color: var(--blueGrey800);
+}
+:root[data-theme="dark"] {
+	--body: var(--bg-black30);
+	--bg-foreground: var(--body-dark);
+	--text-main: var(--blueGrey200);
+	--text-alt: var(--text-secondary);
+	--border-color: var(--blueGrey800);
+	--input-bg: var(--body-dark);
+	color: var(--text-alt);
+}

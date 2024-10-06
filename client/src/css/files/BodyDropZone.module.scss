@@ -1,0 +1,9 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.BodyDropZone {
+	width: 100%;
+	min-height: 30rem;
+	@include flex_col(center, center);
+}

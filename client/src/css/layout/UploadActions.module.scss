@@ -1,0 +1,69 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.UploadActions {
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem 1.8rem;
+	@include flex_row(flex-start, flex-start);
+
+	&_left {
+		width: 50%;
+		height: 100%;
+		@include flex_row(flex-start, center);
+		gap: 0 0.7rem;
+	}
+	&_right {
+		width: 50%;
+		height: 100%;
+		@include flex_row(flex-end, center);
+		gap: 0 0.7rem;
+	}
+}
+
+.SelectAllButton {
+	width: max-content;
+	height: 4rem;
+	@include flex_row(flex-start, center);
+	gap: 0 0.5rem;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 1.6rem;
+	color: var(--blueGrey200);
+	color: var(--accent);
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_icon {
+		width: 3rem;
+		height: 3rem;
+		fill: var(--accent);
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.UploadActions {
+		padding: 0.3rem 0.7rem;
+	}
+	.SelectAllButton {
+		width: max-content;
+		height: 4rem;
+		@include flex_row(flex-start, center);
+		gap: 0 0.5rem;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		font-size: 1.6rem;
+		color: var(--blueGrey200);
+		color: var(--accent);
+
+		&_icon {
+			width: 2.5rem;
+			height: 2.5rem;
+			fill: var(--accent);
+		}
+	}
+}

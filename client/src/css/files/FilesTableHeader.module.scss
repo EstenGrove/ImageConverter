@@ -1,0 +1,53 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.FilesTableHeader {
+	width: 100%;
+	min-height: 8rem;
+	max-height: auto;
+	font-size: 1.8rem;
+	font-weight: 700;
+
+	&_header {
+		width: 100%;
+		height: 4rem;
+	}
+
+	&_main {
+		width: 100%;
+		@include flex_row(space-between, center);
+
+		&_filters {
+			width: 20rem;
+			@include flex_row(flex-start, center);
+			margin-right: auto;
+		}
+		&_search {
+			width: 20rem;
+			@include flex_row(flex-end, center);
+			margin-left: auto;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.FilesTableHeader {
+		&_header {
+			width: 100%;
+			margin-bottom: 2rem;
+		}
+		&_main {
+			width: 100%;
+
+			&_filters {
+				display: none;
+			}
+			&_search {
+				width: 100%;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

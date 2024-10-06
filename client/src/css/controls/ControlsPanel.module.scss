@@ -1,0 +1,99 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+@mixin action() {
+	padding: 0.8rem 1.4rem;
+	border-radius: 0.5rem;
+	font-size: 1.5rem;
+	border: none;
+	outline: none;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.ControlsPanel {
+	width: 100%;
+	height: 100%;
+	padding: 1rem 2rem;
+
+	&_top {
+		width: 100%;
+
+		&_title {
+			font-size: 2rem;
+		}
+		&_close {
+			width: 2.5rem;
+			height: 2.5rem;
+			fill: var(--red500);
+		}
+	}
+	&_main {
+		width: 100%;
+		height: auto;
+		padding: 2rem;
+		display: block;
+		margin: 0 auto;
+
+		&_field {
+			width: 100%;
+			margin: 2rem 0;
+
+			& label {
+				font-size: 1.6rem;
+			}
+		}
+	}
+	&_actions {
+		width: 100%;
+		padding: 0 2rem;
+		@include flex_row(flex-end, center);
+		gap: 0 2rem;
+
+		&_cancel {
+			@include action();
+			background-color: transparent;
+			color: red;
+		}
+		&_convert {
+			@include action();
+			background-color: var(--accent);
+			color: #fff;
+		}
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.ControlsPanel {
+		padding: 1rem;
+
+		&_main {
+			@include fill_container;
+			padding: 0 2rem;
+			max-height: 70%;
+
+			&_field {
+				width: 100%;
+			}
+		}
+		&_actions {
+			width: 100%;
+			padding: 0 2rem;
+			@include flex_row(flex-end, center);
+			gap: 0 2rem;
+
+			&_cancel {
+				@include action();
+				background-color: transparent;
+				color: red;
+			}
+			&_convert {
+				@include action();
+				background-color: var(--accent);
+				color: #fff;
+			}
+		}
+	}
+}

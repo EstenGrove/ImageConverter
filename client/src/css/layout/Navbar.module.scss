@@ -1,0 +1,31 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.Navbar {
+	width: 100%;
+	height: 6rem;
+	padding: 0 2rem;
+	// border-bottom: 1px solid var(--border-color);
+	margin-bottom: 4rem;
+
+	&_list {
+		@include fill_container;
+		@include flex_row(flex-end, center);
+		gap: 0 3rem;
+
+		&_item {
+			height: 100%;
+			@include flex_row(center, center);
+			font-size: 1.7rem;
+
+			&_link {
+				height: 100%;
+				@include flex_row(center, center);
+				color: #fff;
+				text-decoration: none;
+				color: var(--accent);
+			}
+		}
+	}
+}

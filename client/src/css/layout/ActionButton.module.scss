@@ -1,0 +1,13 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.ActionButton {
+	@include actionButton();
+}
+
+@media only screen and (max-width: 750px) {
+	.ActionButton {
+		@include actionButton(3.5rem);
+	}
+}

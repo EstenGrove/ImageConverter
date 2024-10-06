@@ -1,0 +1,28 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+$size: 6rem;
+
+.FileItemPreview {
+	width: $size;
+	height: $size;
+	border: 1px solid var(--border-color);
+	border-radius: 1rem;
+
+	&_img {
+		border-radius: 1rem;
+		@include fill_container;
+		object-fit: contain;
+		image-rendering: optimizeSpeed;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.FileItemPreview {
+		@include flex_row(center, center);
+		width: 4rem;
+		height: 4rem;
+		display: none;
+	}
+}

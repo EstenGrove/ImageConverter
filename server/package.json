@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "archiver": "^7.0.1",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "hono": "^4.6.2",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/date-fns": "^2.6.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^20.16.5",
+    "@types/sharp": "^0.32.0",
+    "tsx": "^4.7.1"
+  }
+}

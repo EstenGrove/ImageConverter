@@ -1,0 +1,108 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+@mixin actionItem() {
+	padding: 0.4rem 0.8rem;
+	border: none;
+	outline: none;
+	font-size: 1.2rem;
+	width: 30%;
+	height: 100%;
+	@include flex_row(center, center);
+	gap: 0 0.5rem;
+	color: var(--blueGrey300);
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.FileActionsIsland {
+	display: block;
+	width: 25rem;
+	height: 5rem;
+	position: fixed;
+	bottom: 5rem;
+	left: 50%;
+	transform: translate(-50%, -5rem);
+	padding: 0.3rem 0.5rem;
+	border-radius: 5rem;
+	background-color: var(--bg-foreground);
+	border: 1px solid var(--border-color);
+	box-shadow: 6px 7px 22px -6px rgba(0, 0, 0, 0.55);
+
+	&_inner {
+		width: 100%;
+		height: 100%;
+		@include flex_row(flex-start, center);
+	}
+}
+
+.Selected {
+	@include actionItem();
+
+	&_count {
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: var(--accent);
+	}
+	&_label {
+		font-size: 1.6rem;
+		color: var(--blueGrey300);
+	}
+}
+.Archiver {
+	@include actionItem();
+
+	&_icon {
+		width: 2rem;
+		min-width: 2rem;
+		min-height: 2rem;
+		height: 2rem;
+		fill: var(--blueGrey300);
+		margin-left: 0.5rem;
+	}
+}
+.Delete {
+	@include actionItem();
+
+	&_icon {
+		width: 2rem;
+		min-width: 2rem;
+		min-height: 2rem;
+		height: 2rem;
+		fill: red;
+		margin-left: 0.5rem;
+	}
+}
+.Converter {
+	@include actionItem();
+
+	&_icon {
+		width: 2rem;
+		min-width: 2rem;
+		min-height: 2rem;
+		height: 2rem;
+		fill: var(--blueGrey300);
+		margin-left: 0.5rem;
+	}
+}
+
+.Splitter {
+	width: 1px;
+	height: 100%;
+	background-color: var(--border-color);
+	margin: 0.5rem 0.5rem;
+}
+
+@media only screen and (max-width: 750px) {
+	.FileActionsIsland {
+		display: block;
+		width: 25rem;
+		height: 5rem;
+		position: fixed;
+		bottom: 1rem;
+		left: 50%;
+		transform: translate(-50%, -1rem);
+	}
+}

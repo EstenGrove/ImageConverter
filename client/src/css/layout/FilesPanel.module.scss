@@ -1,0 +1,51 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.FilesPanel {
+	@include fill_container;
+	width: 120rem;
+	max-width: 100%;
+	@include flex_col(flex-start, center);
+
+	&_top {
+		width: 100%;
+		min-height: 5rem;
+		@include flex_row(flex-end, flex-end);
+	}
+
+	&_header {
+		width: 100%;
+		height: 5rem;
+	}
+	&_table {
+		width: 100%;
+		height: auto;
+		@include flex_row(center, flex-start);
+	}
+}
+
+.UploadButton {
+	padding: 0.6rem 1.6rem;
+	border-radius: 0.5rem;
+	background-color: var(--accent);
+	color: #ffff;
+	@include flex_row(center, center);
+	gap: 0 0.5rem;
+	font-size: 1.6rem;
+	border: none;
+	outline: none;
+	&:hover {
+		cursor: pointer;
+	}
+	&_input {
+		display: none;
+	}
+
+	&_icon {
+		width: 2rem;
+		height: 2rem;
+		fill: #fff;
+		margin-left: -0.5rem;
+	}
+}

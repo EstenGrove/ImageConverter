@@ -1,0 +1,14 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.FileList {
+	width: 100%;
+	// padding: 2rem 0;
+
+	&_list {
+		list-style: none;
+		@include flex_col(flex-start, flex-start);
+		gap: 1rem 0;
+	}
+}

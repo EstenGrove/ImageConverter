@@ -1,0 +1,62 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+$grey: #eaecef;
+$accent: var(--accent);
+$green: var(--accent-green);
+
+.FileDropZone {
+	width: 40rem;
+	height: 20rem;
+	border-radius: 1rem;
+	border: 2px dashed #ccc;
+	-webkit-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+	border: 2px dashed $accent;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_inner {
+		@include fill_container;
+		@include flex_col(center, center);
+		background-color: $grey;
+		background-color: var(--bg-foreground);
+		border-radius: 1rem;
+
+		&_input {
+			display: none;
+		}
+		&_text {
+			font-size: 1.2rem;
+			color: var(--blueGrey600);
+			color: var(--accent);
+			margin-bottom: 1rem;
+		}
+		&_label {
+			font-size: 1.2rem;
+			padding: 0.8rem 1.4rem;
+			border: 0.5rem;
+			background-color: var(--blueGrey800);
+			color: var(--accent);
+			font-size: 1.2rem;
+			border-radius: 0.5rem;
+			&:hover {
+				cursor: pointer;
+				// box-shadow: map-get($map: $shadows, $key: "mainOutline");
+			}
+			&_hasFile {
+				@extend .FileDropZone_inner_label;
+				color: $green;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.FileDropZone {
+		width: 100%;
+	}
+}

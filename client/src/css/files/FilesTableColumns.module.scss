@@ -1,0 +1,88 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+@mixin col() {
+	font-size: 1.5rem;
+	font-weight: 500;
+	@include flex_row(flex-start, center);
+	gap: 0 0.5rem;
+	&:hover {
+		cursor: pointer;
+		color: var(--accent);
+	}
+}
+
+.FilesTableColumns {
+	@include fill_container;
+	height: 4rem;
+	padding: 0.5rem 1rem;
+	@include flex_row(flex-start, center);
+	background-color: var(--bg-foreground);
+	border-radius: 0.5rem;
+}
+.SelectAllCol {
+	width: 4rem;
+	height: 100%;
+	@include flex_row(flex-start, center);
+	@include col();
+	&:hover {
+		cursor: pointer;
+	}
+
+	&_icon {
+		width: 2.5rem;
+		height: 2.5rem;
+		fill: var(--blueGrey700);
+	}
+}
+
+.NameCol {
+	width: var(--nameCol);
+	@include col();
+}
+.TypeCol {
+	width: var(--typeCol);
+	@include col();
+}
+.SizeCol {
+	width: var(--sizeCol);
+	@include col();
+}
+.LastModifiedCol {
+	width: calc(20%);
+	@include col();
+}
+.ActionsCol {
+	width: var(--actionCol);
+	@include col();
+	@include flex_row(flex-end, center);
+}
+
+.filterIcon {
+	width: 1.8rem;
+	height: 1.8rem;
+	fill: var(--blueGrey700);
+	&:hover {
+		cursor: pointer;
+		fill: var(--accent);
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.NameCol {
+		width: var(--mainColMobile);
+	}
+	.SizeCol {
+		display: none;
+		width: calc(var(--altColMobile) + 1rem);
+	}
+	.ActionsCol {
+		width: calc(var(--altColMobile) + 1rem);
+		@include flex_row(flex-end, center);
+		margin-left: auto;
+	}
+	.TypeCol {
+		display: none;
+	}
+}
