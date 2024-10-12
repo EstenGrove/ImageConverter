@@ -1,0 +1,50 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.CsvTableRow {
+	width: 100%;
+	height: 5rem;
+
+	&_inner {
+		padding: 0.5rem 1rem;
+		@include flex_row(flex-start, center);
+		gap: 0 1.5%;
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+		&:nth-child(odd) {
+			border-bottom: 1px solid var(--border-color);
+		}
+		&:nth-child(even) {
+			border-bottom: 1px solid var(--border-color);
+		}
+		// HEADERS ROW
+		&:first-of-type {
+			font-size: 1.6rem;
+			text-transform: uppercase;
+			border-bottom: 2px solid var(--border-color);
+		}
+	}
+}
+
+.Cell {
+	// width: auto;
+	// min-width: max-content;
+	width: 100%;
+	max-width: 100%;
+	height: 3rem;
+	@include flex_row(flex-start, center);
+	padding: 0 0.5rem;
+	border-left: 1px solid var(--border-color);
+	text-align: left;
+	font-size: 1.3rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	&_div {
+		@include fill_container;
+		min-width: 100%;
+	}
+}

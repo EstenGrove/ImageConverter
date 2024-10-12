@@ -234,10 +234,6 @@ const FilesPanel = () => {
 			<div className={styles.FilesPanel_top}>
 				<UploadButton onFile={handleFileUpload} multiple={true} />
 			</div>
-			<div className={styles.FilesPanel_header}>
-				{/* TBD */}
-				{/* TBD */}
-			</div>
 			<div className={styles.FilesPanel_table}>
 				<FilesTable
 					onFiles={handleFilesDrop}

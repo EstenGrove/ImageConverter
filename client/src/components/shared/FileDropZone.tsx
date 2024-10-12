@@ -10,8 +10,8 @@ type Props = {
 	id?: string;
 	hasFile?: boolean;
 	onFile: (e: ChangeEvent<HTMLInputElement>) => void;
-	onFileDrop: (e: DragEvent<HTMLInputElement>) => void;
-	onFileDragOver: (e: DragEvent<HTMLInputElement>) => void;
+	onFileDrop?: (e: DragEvent<HTMLInputElement>) => void;
+	onFileDragOver?: (e: DragEvent<HTMLInputElement>) => void;
 	multiple?: boolean;
 	accept?: string;
 };
@@ -51,7 +51,7 @@ const FileDropZone = ({
 	// sets 'isDragging', forwards event
 	const dragHandler = (e: DragEvent) => {
 		setIsDragging(true);
-		onFileDragOver(e as DragEvent<HTMLInputElement>);
+		return onFileDragOver && onFileDragOver(e as DragEvent<HTMLInputElement>);
 	};
 
 	// resets 'isDragging', forwards event
@@ -64,7 +64,7 @@ const FileDropZone = ({
 			e.preventDefault();
 			return alert(`Invalid file type: ${file.type}`);
 		}
-		onFileDrop(e as DragEvent<HTMLInputElement>);
+		return onFileDrop && onFileDrop(e as DragEvent<HTMLInputElement>);
 	};
 
 	return (
