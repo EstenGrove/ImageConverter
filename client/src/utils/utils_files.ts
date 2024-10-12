@@ -85,12 +85,6 @@ const revokeFileUrl = (url: string) => {
 	URL.revokeObjectURL(url);
 };
 
-/**
- * @description - A utility for creating an object URI to trigger a file download to a user's machine.
- * @param {Blob} blob - A file blob, typically transformed from the HTTP response object
- * @param {String} filename - A custom filename used for saving the file to a user's machine.
- * @returns {Blob} - Returns a fileblob that's immediately downloaded to a user's machine.
- */
 const saveFile = (blob: Blob, filename: string) => {
 	const fileURL = window.URL.createObjectURL(blob);
 	const link = document.createElement("a");
@@ -100,6 +94,39 @@ const saveFile = (blob: Blob, filename: string) => {
 	return window.URL.revokeObjectURL(fileURL);
 };
 
+const readFileAsText = (file: File): Promise<string> => {
+	const reader = new FileReader();
+	return new Promise((resolve, reject) => {
+		reader.onload = (e: ProgressEvent<FileReader>) =>
+			resolve(e.target?.result as string);
+
+		reader.onerror = (e: ProgressEvent<FileReader>) => reject(e);
+
+		reader.readAsText(file);
+	});
+};
+
+type ReadAs = "text" | "blob" | "arrayBuffer" | "url";
+
+// Use FileReader instance to read a file in a specific format
+const readFileAs = (file: File, as: ReadAs): Promise<unknown> => {
+	const reader = new FileReader();
+	const readFile = {
+		text: (file: File) => reader.readAsText(file),
+		url: (file: File) => reader.readAsDataURL(file),
+		blob: (file: File) => reader.readAsDataURL(file),
+		arrayBuffer: (file: File) => reader.readAsArrayBuffer(file),
+	};
+
+	return new Promise((resolve, reject) => {
+		reader.onload = (e) => resolve(e.target?.result as unknown);
+		reader.onerror = (e) => reject(e);
+
+		// read file w/ target 'as' format
+		readFile[as](file);
+	});
+};
+
 export {
 	bytesTo,
 	getSmartFileSize,
@@ -107,4 +134,6 @@ export {
 	calculateTotalSize,
 	revokeFileUrl,
 	saveFile,
+	readFileAsText,
+	readFileAs,
 };

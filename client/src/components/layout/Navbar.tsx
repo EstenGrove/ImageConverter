@@ -1,9 +1,6 @@
-import React from "react";
 import sprite from "../../assets/icons/files.svg";
 import styles from "../../css/layout/Navbar.module.scss";
 import { NavLink } from "react-router-dom";
-
-type Props = {};
 
 const MenuIcon = () => {
 	return (
@@ -15,7 +12,7 @@ const MenuIcon = () => {
 	);
 };
 
-const Navbar = ({}: Props) => {
+const Navbar = () => {
 	return (
 		<nav className={styles.Navbar}>
 			<ul className={styles.Navbar_list}>
@@ -34,9 +31,12 @@ const Navbar = ({}: Props) => {
 						Editor
 					</NavLink>
 				</li>
+				<li className={styles.Navbar_list_item}>
+					<NavLink to="/csv" className={styles.Navbar_list_item_link}>
+						Csv Viewer
+					</NavLink>
+				</li>
 			</ul>
-			{/*  */}
-			{/*  */}
 		</nav>
 	);
 };

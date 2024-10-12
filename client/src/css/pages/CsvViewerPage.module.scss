@@ -1,0 +1,28 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+@import "../../sass/custom";
+
+.CsvViewerPage {
+	width: 100%;
+	height: 140vh;
+
+	&_dropzone {
+		width: 100%;
+		@include flex_row(center, flex-start);
+	}
+
+	&_search {
+		width: 50rem;
+		display: block;
+		margin: 3rem auto;
+		& label {
+			font-size: 1.6rem;
+		}
+	}
+
+	&_outer {
+		width: 100%;
+		height: 50rem;
+		margin-bottom: 6rem;
+	}
+}
